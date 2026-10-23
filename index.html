@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Магомедбег Хирамагомедов — Партнёр GreenLeaf в Махачкале</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f1;
+  --bg-alt:#ebe9e2;
+  --ink:#0f1410;
+  --ink-soft:#3b4238;
+  --muted:#6b7266;
+  --line:rgba(15,20,16,.12);
+  --accent:#1f4d36;
+  --accent-2:#2f7a55;
+  --accent-soft:#e6efe8;
+  --gold:#b08d3e;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(15,20,16,.04), 0 12px 40px -20px rgba(15,20,16,.25);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --header-h:70px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+section[id]{scroll-margin-top:calc(var(--header-h) + 20px)}
+
+.progress{
+  position:fixed;top:0;left:0;height:2px;width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+  z-index:1000;transition:width .1s linear;
+}
+
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;
+  transition:all .4s var(--ease);
+  background:transparent;
+  height:var(--header-h);
+  display:flex;align-items:center;
+}
+header.scrolled{
+  background:rgba(246,245,241,.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  padding:12px 0;
+  height:62px;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Manrope';font-weight:700;font-size:18px;letter-spacing:-.01em}
+.logo-mark{
+  width:34px;height:34px;border-radius:9px;
+  background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-weight:800;font-size:15px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a.nav-item{
+  font-size:14px;color:var(--ink-soft);
+  transition:color .2s;
+  position:relative;
+  padding:6px 0;
+}
+.nav-links a.nav-item::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:width .3s var(--ease);
+}
+.nav-links a.nav-item:hover{color:var(--accent)}
+.nav-links a.nav-item:hover::after{width:100%}
+.nav-links a.nav-item.active{color:var(--accent);font-weight:500}
+.nav-links a.nav-item.active::after{width:100%}
+
+.burger{display:none;width:32px;height:32px;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;background:none;border:none;padding:0}
+.burger span{height:1.5px;background:var(--ink);transition:.3s;display:block;width:100%}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+.hero{
+  min-height:100vh;
+  padding:140px 0 80px;
+  position:relative;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(47,122,85,.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 40%, rgba(176,141,62,.08), transparent 60%),
+    var(--bg);
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 14px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent);
+  font-size:13px;font-weight:500;letter-spacing:.02em;
+  margin-bottom:28px;
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(31,77,54,.15)}
+.hero h1{
+  font-size:clamp(40px,6vw,76px);
+  font-weight:800;
+  margin-bottom:24px;
+}
+.hero h1 .accent{color:var(--accent);font-style:italic;font-weight:500}
+.hero p.lead{
+  font-size:18px;color:var(--ink-soft);max-width:560px;margin-bottom:36px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 28px;border-radius:999px;font-weight:500;font-size:15px;
+  transition:all .3s var(--ease);cursor:pointer;border:none;
+  font-family:inherit;
+}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(31,77,54,.5)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+.btn svg{width:16px;height:16px}
+
+.hero-visual{
+  position:relative;aspect-ratio:4/5;border-radius:20px;
+  background:linear-gradient(160deg,var(--accent) 0%,#0f2e20 100%);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.hero-photo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  z-index:0;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(15,20,16,.15) 0%,
+    rgba(15,20,16,.05) 40%,
+    rgba(15,20,16,.75) 100%
+  );
+  z-index:1;
+}
+.hero-visual .leaf,
+.hero-visual .badge,
+.hero-visual .big{
+  position:relative;
+  z-index:2;
+}
+.hero-visual::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(400px 300px at 70% 20%, rgba(255,255,255,.12), transparent 60%),
+    radial-gradient(300px 400px at 20% 80%, rgba(176,141,62,.25), transparent 60%);
+  z-index:1;
+  pointer-events:none;
+}
+.hero-visual .badge{
+  position:absolute;top:24px;left:24px;right:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  color:rgba(255,255,255,.9);font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+}
+.hero-visual .big{
+  position:absolute;bottom:24px;left:24px;right:24px;color:#fff;
+}
+.hero-visual .big .name{font-family:'Manrope';font-size:28px;font-weight:700;margin-bottom:6px}
+.hero-visual .big .role{font-size:14px;opacity:.85}
+.leaf{
+  position:absolute;font-size:180px;opacity:.12;color:#fff;
+  top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);
+  font-family:'Manrope';font-weight:800;
+}
+
+section{padding:120px 0;position:relative}
+.section-head{max-width:720px;margin-bottom:64px}
+.section-tag{
+  display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:16px;
+}
+.section-head h2{font-size:clamp(32px,4vw,52px);margin-bottom:18px}
+.section-head p{font-size:17px;color:var(--ink-soft);max-width:620px}
+
+.about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.about-text p{font-size:17px;color:var(--ink-soft);margin-bottom:18px}
+.about-text p:first-child{font-size:20px;color:var(--ink);font-weight:500}
+.about-points{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.about-point{
+  display:flex;align-items:center;gap:14px;
+  padding:18px 22px;background:#fff;border-radius:12px;border:1px solid var(--line);
+  transition:all .3s var(--ease);
+}
+.about-point:hover{border-color:var(--accent);transform:translateX(4px)}
+.about-point .check{
+  width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.about-point .check svg{width:14px;height:14px}
+
+.company{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.company::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(800px 400px at 80% 20%, rgba(47,122,85,.25), transparent 60%);
+}
+.company .section-tag{color:var(--gold)}
+.company h2{color:#fff}
+.company .section-head p{color:rgba(255,255,255,.7)}
+.company-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.company-card{
+  padding:32px 28px;border-radius:16px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  transition:all .4s var(--ease);
+}
+.company-card:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);transform:translateY(-4px)}
+.company-card .num{font-family:'Manrope';font-size:44px;font-weight:700;color:var(--gold);margin-bottom:16px;line-height:1}
+.company-card h3{font-size:18px;margin-bottom:10px;color:#fff}
+.company-card p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.6}
+
+.values{background:var(--bg-alt)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value-card{
+  padding:36px 30px;background:#fff;border-radius:16px;border:1px solid var(--line);
+  transition:all .4s var(--ease);position:relative;overflow:hidden;
+}
+.value-card::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);
+}
+.value-card:hover::before{transform:scaleX(1)}
+.value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.value-card .icon{
+  width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;margin-bottom:20px;
+}
+.value-card .icon svg{width:22px;height:22px}
+.value-card h3{font-size:20px;margin-bottom:10px}
+.value-card p{color:var(--ink-soft);font-size:15px}
+
+.how{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.how::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(1000px 500px at 80% 20%, rgba(47,122,85,.20), transparent 60%),
+    radial-gradient(800px 400px at 10% 80%, rgba(176,141,62,.10), transparent 60%);
+  pointer-events:none;
+}
+.how .section-tag{color:var(--gold)}
+.how h2{color:#fff}
+.how-intro{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:48px;
+  position:relative;
+  overflow:hidden;
+}
+.how-intro::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+  opacity:.6;
+}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.how-text h3{
+  font-size:28px;margin-bottom:24px;color:#fff;
+  position:relative;padding-bottom:20px;
+}
+.how-text h3::after{
+  content:"";position:absolute;bottom:0;left:0;
+  width:40px;height:2px;background:var(--gold);
+}
+.how-text p{
+  font-size:16px;color:rgba(255,255,255,.75);
+  line-height:1.7;margin-bottom:18px;
+}
+.how-text p:last-child{margin-bottom:0}
+.how-text strong{color:#fff;font-weight:600}
+.how-text em{color:var(--gold);font-style:normal;font-weight:600}
+.steps{display:flex;flex-direction:column;gap:0;position:relative}
+.step{
+  display:flex;align-items:flex-start;gap:20px;
+  padding:20px 0;position:relative;cursor:default;
+  transition:all .4s var(--ease);
+}
+.step:not(:last-child){border-bottom:1px solid rgba(255,255,255,.06)}
+.step:hover{transform:translateX(6px)}
+.step:hover .step-num{background:var(--gold);color:var(--ink);transform:scale(1.05)}
+.step:hover .step-txt{color:#fff}
+.step-num{
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--gold);
+  display:grid;place-items:center;
+  font-family:'Manrope';font-weight:700;font-size:17px;
+  flex-shrink:0;transition:all .4s var(--ease);
+}
+.step-txt{
+  font-size:15px;color:rgba(255,255,255,.75);
+  line-height:1.6;padding-top:10px;
+  transition:color .3s var(--ease);
+}
+.step-txt strong{
+  color:#fff;font-weight:600;display:block;
+  margin-bottom:2px;font-size:16px;
+}
+
+.benefits{background:var(--bg-alt)}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.benefit{
+  padding:28px;background:#fff;border-radius:14px;border:1px solid var(--line);
+  transition:all .4s var(--ease);
+}
+.benefit:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}
+.benefit .emoji{font-size:28px;margin-bottom:16px;display:block}
+.benefit h3{font-size:17px;margin-bottom:8px}
+.benefit p{font-size:14px;color:var(--ink-soft)}
+
+.kits{background:var(--bg)}
+.kits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kit{
+  border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);
+  transition:all .5s var(--ease);position:relative;
+  display:flex;flex-direction:column;
+}
+.kit:hover{transform:translateY(-8px);box-shadow:0 20px 50px -20px rgba(15,20,16,.25)}
+.kit-visual{
+  aspect-ratio:4/3;position:relative;overflow:hidden;
+  background:#f0ede6;
+}
+.kit-visual img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.kit:hover .kit-visual img{transform:scale(1.05)}
+.kit-visual .tag{
+  position:absolute;top:16px;left:16px;
+  padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.95);
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  backdrop-filter:blur(6px);
+  z-index:2;
+}
+.kit-body{padding:28px;flex:1;display:flex;flex-direction:column}
+.kit-body h3{font-size:22px;margin-bottom:10px}
+.kit-body p{color:var(--ink-soft);font-size:14px;margin-bottom:20px;flex:1}
+.kit-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:500;color:var(--accent);
+  transition:gap .3s var(--ease);
+  cursor:pointer;
+  background:none;
+  border:none;
+  font-family:inherit;
+  padding:0;
+}
+.kit-link:hover{gap:14px}
+.kit-link svg{width:14px;height:14px}
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(15,20,16,.6);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  z-index:200;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  opacity:0;
+  visibility:hidden;
+  transition:all .3s var(--ease);
+}
+.modal-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+.modal{
+  background:#fff;
+  border-radius:20px;
+  max-width:640px;
+  width:100%;
+  max-height:90vh;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  transform:translateY(30px) scale(.96);
+  transition:transform .4s var(--ease);
+  box-shadow:0 30px 80px -20px rgba(15,20,16,.4);
+  overflow:hidden;
+}
+.modal-overlay.active .modal{
+  transform:translateY(0) scale(1);
+}
+.modal-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  z-index:10;
+  width:44px;height:44px;
+  border-radius:50%;
+  background:rgba(15,20,16,.35);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.2);
+  cursor:pointer;
+  display:grid;place-items:center;
+  transition:all .3s var(--ease);
+  padding:0;
+  flex-shrink:0;
+}
+.modal-close:hover{
+  background:rgba(15,20,16,.6);
+  transform:rotate(90deg) scale(1.05);
+}
+.modal-close svg{width:18px;height:18px;color:#fff}
+
+.modal-scroll{
+  overflow-y:auto;
+  flex:1;
+  min-height:0;
+  overscroll-behavior:contain;
+}
+.modal-visual{
+  aspect-ratio:16/10;
+  overflow:hidden;
+  position:relative;
+}
+.modal-visual img{
+  width:100%;height:100%;
+  object-fit:cover;
+}
+.modal-body{
+  padding:32px 32px 36px;
+}
+.modal-tag{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:600;
+  margin-bottom:12px;
+}
+.modal-body h3{
+  font-size:28px;
+  margin-bottom:16px;
+  color:var(--ink);
+}
+.modal-body .desc{
+  font-size:15px;
+  color:var(--ink-soft);
+  line-height:1.7;
+  margin-bottom:24px;
+}
+.modal-specs{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:20px;
+  background:var(--bg);
+  border-radius:12px;
+  margin-bottom:28px;
+}
+.modal-spec{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:14px;
+}
+.modal-spec .lbl{color:var(--muted)}
+.modal-spec .val{font-weight:600;color:var(--ink)}
+.modal-spec .val.price{
+  font-family:'Manrope';
+  font-size:20px;
+  color:var(--accent);
+  font-weight:700;
+}
+.modal-cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.modal-cta .btn{flex:1;justify-content:center;min-width:180px}
+
+.cta{
+  background:var(--ink);color:#fff;padding:100px 0;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(600px 300px at 50% 0%, rgba(47,122,85,.3), transparent 60%);
+}
+.cta-inner{position:relative;text-align:center;max-width:720px;margin:0 auto}
+.cta h2{font-size:clamp(32px,4vw,52px);margin-bottom:20px;color:#fff}
+.cta p{font-size:17px;color:rgba(255,255,255,.7);margin-bottom:36px}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-white:hover{background:var(--gold);color:#fff;transform:translateY(-2px)}
+.btn-outline-white{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-outline-white:hover{background:#fff;color:var(--ink);border-color:#fff}
+
+footer{background:#0a0e0b;color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;margin-bottom:40px}
+.footer-grid h4{color:#fff;font-size:14px;margin-bottom:18px;letter-spacing:.05em;text-transform:uppercase}
+.footer-grid a{display:block;padding:6px 0;font-size:14px;transition:color .2s}
+.footer-grid a:hover{color:var(--gold)}
+.footer-brand p{font-size:14px;margin-top:16px;max-width:360px;line-height:1.6}
+.footer-bottom{
+  padding-top:24px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:12px;
+}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+.reveal-delay-5{transition-delay:.5s}
+
+@media (max-width:960px){
+  .hero-grid,.about-grid,.how-grid{grid-template-columns:1fr;gap:40px}
+  .company-grid{grid-template-columns:repeat(2,1fr)}
+  .values-grid,.benefits-grid,.kits-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .nav-links{
+    position:fixed;
+    top:var(--header-h);
+    left:0;right:0;
+    flex-direction:column;
+    background:rgba(246,245,241,.98);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding:8px 24px 24px;
+    gap:0;
+    border-bottom:1px solid var(--line);
+    transform:translateY(-120%);
+    transition:transform .4s var(--ease);
+    opacity:0;
+    visibility:hidden;
+    z-index:99;
+    align-items:stretch;
+  }
+  .nav-links.open{
+    transform:translateY(0);
+    opacity:1;
+    visibility:visible;
+  }
+  .nav-links a.nav-item{
+    padding:16px 0;
+    width:100%;
+    border-bottom:1px solid var(--line);
+    font-size:16px;
+  }
+  .nav-links a.nav-item:last-of-type{border-bottom:none}
+  .burger{display:flex}
+  section{padding:80px 0}
+  .hero{padding:120px 0 60px}
+}
+@media (max-width:560px){
+  .company-grid{grid-template-columns:1fr}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+  .how-intro{padding:32px 24px}
+  .how-text h3{font-size:24px}
+  .step{gap:16px}
+  .step-num{width:40px;height:40px;font-size:16px}
+  .step-txt{font-size:14px}
+  .modal-body{padding:24px 22px 28px}
+  .modal-body h3{font-size:24px}
+  .modal-cta{flex-direction:column}
+  .modal-cta .btn{width:100%}
+  .modal-close{width:40px;height:40px;top:12px;right:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header id="header">
+  <div class="container nav">
+    <a href="#hero" class="logo" data-scroll>
+      <span class="logo-mark">G</span>
+      <span>GreenLeaf · Mhk</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#about" class="nav-item" data-scroll>Обо мне</a>
+      <a href="#company" class="nav-item" data-scroll>Компания</a>
+      <a href="#how" class="nav-item" data-scroll>Как это работает</a>
+      <a href="#kits" class="nav-item" data-scroll>Наборы</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">Официальный партнёр · Махачкала</div>
+      <h1>Начни своё дело <br>вместе с <span class="accent">GreenLeaf</span></h1>
+      <p class="lead">Знания, инструменты и личное сопровождение. Даже без опыта и больших вложений — выход на стабильный заработок с поддержкой на каждом шаге.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/qr/XV4PADUYJN6CE1" class="btn btn-primary">
+          Написать в WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#about" class="btn btn-ghost" data-scroll>Узнать подробнее</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-delay-2">
+      <img src="partner.jpg" alt="Магомедбег Хирамагомедов — партнёр GreenLeaf" class="hero-photo">
+      <div class="hero-overlay"></div>
+      <div class="leaf">G</div>
+      <div class="badge"><span>GREENLEAF</span><span>EST. 1998</span></div>
+      <div class="big">
+        <div class="name">Магомедбег<br>Хирамагомедов</div>
+        <div class="role">Партнёр · Махачкала</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <div class="section-tag">Обо мне</div>
+      <h2 style="font-size:clamp(32px,4vw,48px);margin-bottom:24px">Меня зовут Магомедбег Хирамагомедов</h2>
+      <div class="about-text">
+        <p>Я официальный партнёр международной компании Green Leaf в Махачкале. Помогаю людям начать бизнес с нуля, найти своё дело и выйти на стабильный заработок.</p>
+        <p>Я даю не просто обучение, а полноценное сопровождение: знания и инструменты, адаптированные под наш регион, и пошаговый план.</p>
+        <p>Я не исчезаю после первой встречи. Я рядом на всём пути и помогаю преодолевать любые препятствия.</p>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="about-points">
+        <div class="about-point">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div><strong>Без опыта</strong><div style="font-size:14px;color:var(--muted)">Обучу с нуля под ваш темп</div></div>
+        </div>
+        <div class="about-point">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div><strong>Без больших вложений</strong><div style="font-size:14px;color:var(--muted)">Старт доступен каждому</div></div>
+        </div>
+        <div class="about-point">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div><strong>С поддержкой на каждом шаге</strong><div style="font-size:14px;color:var(--muted)">Личное сопровождение и команда</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="company" id="company">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">О компании</div>
+      <h2>Что такое Green Leaf?</h2>
+      <p>Международная компания, основанная в Китае в 1998 году. С 2018 года — официальное представительство в России. Производство, магазины, сервисные центры и партнёрская программа — всё в одной экосистеме.</p>
+    </div>
+    <div class="company-grid">
+      <div class="company-card reveal">
+        <div class="num">5000+</div>
+        <h3>Товаров в каталоге</h3>
+        <p>Продукция повседневного спроса, произведённая на собственных заводах компании.</p>
+      </div>
+      <div class="company-card reveal reveal-delay-1">
+        <div class="num">27+</div>
+        <h3>Лет на рынке</h3>
+        <p>Международный опыт и стабильная репутация с 1998 года.</p>
+      </div>
+      <div class="company-card reveal reveal-delay-2">
+        <div class="num">РФ</div>
+        <h3>Фирменные магазины</h3>
+        <p>Сервисные центры и магазины открыты во всех регионах страны.</p>
+      </div>
+      <div class="company-card reveal reveal-delay-3">
+        <div class="num">MLM</div>
+        <h3>Реферальная система</h3>
+        <p>Многоуровневый учёт покупок и прозрачные выплаты вознаграждений.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values" id="values">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">Философия</div>
+      <h2>Стратегия, миссия и ценности</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
+        <h3>Стратегия</h3>
+        <p>Распространение высококачественной продукции по разумной цене на мировом рынке.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Миссия</h3>
+        <p>Сделать людей счастливее, здоровее, красивее и богаче.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <h3>Ценности</h3>
+        <p>Гармония, альтруизм, честность, преданность делу, полная отдача и инновация.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">Как это работает</div>
+      <h2>Простая система — стабильный результат</h2>
+    </div>
+
+    <div class="how-intro">
+      <div class="how-grid">
+        <div class="how-text reveal">
+          <h3>Суть бизнеса</h3>
+          <p>Вы приглашаете <strong>двух-трёх знакомых</strong>. Каждый из них — ещё двоих-троих. Команда растёт сама, без вашего постоянного участия.</p>
+          <p>Каждый участник делает личные покупки на <strong>2–3 тыс. ₽ в месяц</strong> (15 PV) — и компания начисляет вам процент со всей ветви.</p>
+          <p>Это <em>пассивный доход</em>: вы строите систему один раз, а она работает годами.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal reveal-delay-1">
+            <div class="step-num">1</div>
+            <div class="step-txt">
+              <strong>Регистрация</strong>
+              получаете ID и стартовый набор
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step-num">2</div>
+            <div class="step-txt">
+              <strong>Личные покупки</strong>
+              15 PV в месяц — условие участия
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-3">
+            <div class="step-num">3</div>
+            <div class="step-txt">
+              <strong>Приглашение</strong>
+              делитесь возможностью с друзьями
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-4">
+            <div class="step-num">4</div>
+            <div class="step-txt">
+              <strong>Рост команды</strong>
+              каждый приглашает ещё людей
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-5">
+            <div class="step-num">5</div>
+            <div class="step-txt">
+              <strong>Вознаграждение</strong>
+              процент с товарооборота ветви
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="partner">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">Что вы получаете</div>
+      <h2>Старт с поддержкой и бонусами</h2>
+      <p>Это не просто начало бизнеса — это полноценный набор инструментов и преимуществ с первого дня.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit reveal"><span class="emoji">🆔</span><h3>Личный кабинет</h3><p>ID-номер, доступ к системе, истории заказов и структуре команды.</p></div>
+      <div class="benefit reveal reveal-delay-1"><span class="emoji">🏷️</span><h3>Скидка 50%</h3><p>На всю продукцию Greenleaf, в том числе в сервисных центрах.</p></div>
+      <div class="benefit reveal reveal-delay-2"><span class="emoji">🎁</span><h3>Стартовый набор</h3><p>Один из трёх наборов в подарок при регистрации.</p></div>
+      <div class="benefit reveal"><span class="emoji">📚</span><h3>Обучение</h3><p>Видеоуроки, вебинары, стартовые школы и личное сопровождение.</p></div>
+      <div class="benefit reveal reveal-delay-1"><span class="emoji">💬</span><h3>Закрытый чат</h3><p>Поддержка, обмен опытом и ответы на вопросы каждый день.</p></div>
+      <div class="benefit reveal reveal-delay-2"><span class="emoji">🚀</span><h3>Бонусы за активность</h3><p>Подарки и премии за первые результаты и рост в команде.</p></div>
+      <div class="benefit reveal"><span class="emoji">💚</span><h3>Доступ к эксклюзивам</h3><p>Специальные предложения и новинки — раньше остальных.</p></div>
+      <div class="benefit reveal reveal-delay-1"><span class="emoji">✈️</span><h3>Поездки за достижения</h3><p>Турция, Китай и другие страны — за результаты в команде.</p></div>
+      <div class="benefit reveal reveal-delay-2"><span class="emoji">🌱</span><h3>Качественный продукт</h3><p>Более 5000 наименований — то, что реально покупают.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="kits" id="kits">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">Стартовые наборы</div>
+      <h2>Выберите свой старт</h2>
+      <p>Состав может отличаться в зависимости от региона. Все наборы включают базовый доступ к системе и обучению.</p>
+    </div>
+    <div class="kits-grid">
+      <div class="kit kit-1 reveal">
+        <div class="kit-visual">
+          <div class="tag">Бежевый</div>
+          <img src="beige.jpg" alt="Набор Бежевый" loading="lazy">
+        </div>
+        <div class="kit-body">
+          <h3>Набор «Бежевый»</h3>
+          <p>Уход за лицом Sealuxe и товары для дома и гигиены: тоник, эмульсия, крем, стиральный порошок, средство для мытья посуды, зубная паста.</p>
+          <button class="kit-link" data-kit="beige">
+            Подробнее
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="kit kit-2 reveal reveal-delay-1">
+        <div class="kit-visual">
+          <div class="tag">Стакан</div>
+          <img src="cup.jpg" alt="Набор Стакан" loading="lazy">
+        </div>
+        <div class="kit-body">
+          <h3>Набор «Стакан»</h3>
+          <p>Стакан-ионизатор Kardli, шампунь, зубные пасты и щётки — всё для ежедневного ухода за здоровьем и гигиеной.</p>
+          <button class="kit-link" data-kit="cup">
+            Подробнее
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="kit kit-3 reveal reveal-delay-2">
+        <div class="kit-visual">
+          <div class="tag">Фиолетовый</div>
+          <img src="purple.jpg" alt="Набор Фиолетовый" loading="lazy">
+        </div>
+        <div class="kit-body">
+          <h3>Набор «Фиолетовый»</h3>
+          <p>Sealuxe Bifida Yeast — антивозрастной уход премиум-класса и товары для дома. Максимальная забота о коже.</p>
+          <button class="kit-link" data-kit="purple">
+            Подробнее
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    </button>
+    <div class="modal-scroll">
+      <div class="modal-visual">
+        <img id="modal-img" src="" alt="">
+      </div>
+      <div class="modal-body">
+        <div class="modal-tag" id="modal-tag">Стартовый набор</div>
+        <h3 id="modal-title"></h3>
+        <p class="desc" id="modal-desc"></p>
+        <div class="modal-specs">
+          <div class="modal-spec">
+            <span class="lbl">Стоимость</span>
+            <span class="val price">28 900 ₽</span>
+          </div>
+          <div class="modal-spec">
+            <span class="lbl">Личный оборот</span>
+            <span class="val">275 PV</span>
+          </div>
+          <div class="modal-spec">
+            <span class="lbl">Скидочные купоны</span>
+            <span class="val">102 900</span>
+          </div>
+          <div class="modal-spec">
+            <span class="lbl">Доставка</span>
+            <span class="val">СДЭК до двери</span>
+          </div>
+        </div>
+        <div class="modal-cta">
+          <a href="https://wa.me/qr/XV4PADUYJN6CE1" class="btn btn-primary">
+            Хочу этот набор
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <h2>Готовы начать?</h2>
+      <p>Напишите мне — отвечу на вопросы о продукции и сотрудничестве, расскажу, с чего начать.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/qr/XV4PADUYJN6CE1" class="btn btn-white">WhatsApp</a>
+        <a href="https://t.me/+yD0sFVNgJpozNTcy" class="btn btn-outline-white">Telegram</a>
+        <a href="https://www.instagram.com/muhammadbeg11?srtk=MWM3end1cnR4dHJ5MA%3D%3D&utm_source=qr" class="btn btn-outline-white">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color:#fff">
+          <span class="logo-mark">G</span>
+          <span>GreenLeaf · Mhk</span>
+        </div>
+        <p>Официальный партнёр международной компании Green Leaf в Махачкале. Сервисный центр: г. Махачкала, ул. Имама Шамиля, 86 А.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <a href="#about" data-scroll>Обо мне</a>
+        <a href="#company" data-scroll>Компания</a>
+        <a href="#how" data-scroll>Как это работает</a>
+        <a href="#kits" data-scroll>Наборы</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="https://wa.me/qr/XV4PADUYJN6CE1">WhatsApp</a>
+        <a href="https://t.me/+yD0sFVNgJpozNTcy">Telegram</a>
+        <a href="https://www.instagram.com/muhammadbeg11?srtk=MWM3end1cnR4dHJ5MA%3D%3D&utm_source=qr">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 GreenLeaf · Махачкала</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const progress = document.getElementById('progress');
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = scrolled + '%';
+  if (window.scrollY > 40) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+}, { passive: true });
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('nav-links');
+
+function closeMenu() {
+  burger.classList.remove('open');
+  navLinks.classList.remove('open');
+  if (!modalOverlay.classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
+}
+
+burger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  burger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function slowScrollTo(targetY, duration = 1800) {
+  const startY = window.pageYOffset;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function step(currentTime) {
+    if (!startTime) startTime = currentTime;
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+    window.scrollTo(0, startY + distance * ease);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+document.querySelectorAll('[data-scroll]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+
+    const targetId = href.substring(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+    closeMenu();
+
+    const runScroll = () => {
+      const headerH = header.classList.contains('scrolled') ? 62 : 70;
+      const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerH - 20;
+      slowScrollTo(targetY, 1800);
+      history.pushState(null, null, href);
+    };
+
+    if (navLinks.classList.contains('open')) {
+      setTimeout(runScroll, 80);
+    } else {
+      runScroll();
+    }
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 960 && navLinks.classList.contains('open')) {
+    closeMenu();
+  }
+});
+
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a.nav-item');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === '#' + id) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
+}, {
+  rootMargin: '-40% 0px -55% 0px',
+  threshold: 0
+});
+
+sections.forEach(s => {
+  if (s.id && s.id !== 'hero') sectionObserver.observe(s);
+});
+
+const modalOverlay = document.getElementById('modal-overlay');
+const modalClose = document.getElementById('modal-close');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalTag = document.getElementById('modal-tag');
+const kitButtons = document.querySelectorAll('.kit-link');
+
+const kitData = {
+  beige: {
+    tag: 'Стартовый набор · Бежевый',
+    title: 'Набор «Бежевый»',
+    desc: 'Уход за лицом Sealuxe и товары для дома и гигиены. В набор входят: тоник для лица Renewing Skin Toner, эмульсия Brightening Emulsion, очищающий крем Softening Cleansing Cream, восстанавливающий крем Repairing Cream, стиральный порошок iLife Laundry Detergent 1 кг, средство для мытья посуды iLife Dishwashing Liquid 1 кг, бамбуковые салфетки и зубная паста iLife Natural Seaweed Toothpaste. Идеальный старт для тех, кто ценит качество.',
+    img: 'beige.jpg'
+  },
+  cup: {
+    tag: 'Стартовый набор · Стакан',
+    title: 'Набор «Стакан»',
+    desc: 'Стакан-ионизатор Kardli, шампунь, зубные пасты и щётки — всё для ежедневного ухода за здоровьем и гигиеной. Стакан-ионизатор позволяет получать структурированную воду, полезную для организма. В набор также входят средства личной гигиены и ухода за полостью рта. Отличный выбор для тех, кто заботится о здоровье семьи.',
+    img: 'cup.jpg'
+  },
+  purple: {
+    tag: 'Стартовый набор · Фиолетовый',
+    title: 'Набор «Фиолетовый»',
+    desc: 'Sealuxe Bifida Yeast — антивозрастной уход премиум-класса и товары для дома. Линейка Bifida Yeast основана на ферментированных ингредиентах, которые глубоко восстанавливают кожу, повышают её эластичность и замедляют процессы старения. В набор входят средства для ежедневного ухода за лицом и телом, а также товары для дома.',
+    img: 'purple.jpg'
+  }
+};
+
+function openModal(kitId) {
+  const data = kitData[kitId];
+  if (!data) return;
+  modalTag.textContent = data.tag;
+  modalTitle.textContent = data.title;
+  modalDesc.textContent = data.desc;
+  modalImg.src = data.img;
+  modalImg.alt = data.title;
+  const modalScroll = modalOverlay.querySelector('.modal-scroll');
+  if (modalScroll) modalScroll.scrollTop = 0;
+  modalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modalOverlay.classList.remove('active');
+  if (!navLinks.classList.contains('open')) {
+    document.body.style.overflow = '';
+  }
+}
+
+kitButtons.forEach(btn => {
+  btn.addEventListener('click', () => openModal(btn.dataset.kit));
+});
+
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+</body>
+</html>
