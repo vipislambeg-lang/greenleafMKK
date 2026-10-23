@@ -241,6 +241,24 @@ section{padding:120px 0;position:relative}
 .company-card h3{font-size:18px;margin-bottom:10px;color:#fff}
 .company-card p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.6}
 
+.company-video{
+  margin-top:56px;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.6);
+}
+.company-video-player{
+  width:100%;
+  height:auto;
+  display:block;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:#000;
+}
+
 .values{background:var(--bg-alt)}
 .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .value-card{
@@ -605,6 +623,7 @@ footer{background:#0a0e0b;color:rgba(255,255,255,.7);padding:60px 0 30px}
   .hero p.lead{
     font-size:16px;
   }
+  .company-video{margin-top:36px;border-radius:14px}
 }
 @media (max-width:400px){
   .hero h1{
@@ -721,6 +740,18 @@ footer{background:#0a0e0b;color:rgba(255,255,255,.7);padding:60px 0 30px}
         <p>Многоуровневый учёт покупок и прозрачные выплаты вознаграждений.</p>
       </div>
     </div>
+
+    <div class="company-video reveal">
+      <video
+        controls
+        preload="metadata"
+        playsinline
+        class="company-video-player">
+        <source src="greenleaf.mp4" type="video/mp4">
+        Ваш браузер не поддерживает воспроизведение видео.
+      </video>
+    </div>
+
   </div>
 </section>
 
